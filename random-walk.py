@@ -4,9 +4,12 @@
 # y starts at 0, x increases or decreases by 1, chosen randomly
 # assign # of steps to take, and plot a visual line graph connecting all of the points
 
+import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
+# import numpy as np
 from random import randint
+
+matplotlib.use('TkAgg')
 
 coords = []
 y = 0
@@ -29,6 +32,6 @@ for [x, y] in coords:
 
 # fig, axs = plt.subplots(2, 2)
 plt.plot(xs, ys)
-# plt.show()
+plt.show()
 plt.savefig("mygraph.png")
 
