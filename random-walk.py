@@ -13,14 +13,16 @@ matplotlib.use('TkAgg')
 
 coords = []
 y = 0
+x = 0
 steps = 200
 
 # step 0 - 199
 for step in range(steps):
     # print('rand int', randint(-1, 1))
     y = y + randint(-1, 1)
+    x = x + randint(-1, 1)
     # print('step, y', f'{step}, {y}')
-    coords.append([step, y])
+    coords.append([x, y])
 # print('coords', coords)
 
 xs = []
