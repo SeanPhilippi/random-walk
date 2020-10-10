@@ -1,12 +1,5 @@
-# y(t) = y(t - 1) + e(random #)
-# matplotlib
-# plot a random walk in 1 dimension
-# y starts at 0, x increases or decreases by 1, chosen randomly
-# assign # of steps to take, and plot a visual line graph connecting all of the points
-
 import matplotlib
-import matplotlib.pyplot as plt
-# import numpy as np
+import matplotlib.pyplot as ppt
 from random import randint
 
 matplotlib.use('TkAgg')
@@ -14,26 +7,29 @@ matplotlib.use('TkAgg')
 coords = []
 y = 0
 x = 0
+z = 0
 steps = 200
 
 # step 0 - 199
 for step in range(steps):
-    # print('rand int', randint(-1, 1))
     y = y + randint(-1, 1)
     x = x + randint(-1, 1)
-    # print('step, y', f'{step}, {y}')
-    coords.append([x, y])
-# print('coords', coords)
+    z = z + randint(-1, 1)
+    coords.append([x, y, z])
 
 xs = []
 ys = []
+zs = []
 
-for [x, y] in coords:
+for [x, y, z] in coords:
     xs.append(x)    
     ys.append(y)    
+    zs.append(z)    
 
-# fig, axs = plt.subplots(2, 2)
-plt.plot(xs, ys)
-plt.show()
-plt.savefig("mygraph.png")
+ax = ppt.axes(projection='3d')
+ax.set_title('3D Random Walk')
+
+ppt.plot(xs, ys, zs, color='c', linestyle='--')
+ppt.show()
+ppt.savefig("mygraph.png")
 
