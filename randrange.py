@@ -1,8 +1,9 @@
 from random import randrange, seed
 from matplotlib import pyplot
 
-series = [randrange(10) for i in range(100)]
+seed(1)
+series = [randrange(10) for i in range(10)]
 pyplot.plot(series)
 print('series', series)
-# seri
+print('series 2', series)
 
